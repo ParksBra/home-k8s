@@ -25,4 +25,4 @@ spec:
   storageClassName: mosquitto-zfs-sc
   resources:
     requests:
-      storage: {{ (((.Values.mosquitto).volume).data).size | default "8Gi" }}
+      storage: {{ .Values.mosquitto.volume.data.size }}

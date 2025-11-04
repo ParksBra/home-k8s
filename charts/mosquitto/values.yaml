@@ -3,6 +3,9 @@ mosquitto:
     host: mqtt.parkl.ee
     websocketPort: 9001
     tlsPort: 8883
+  account:
+    username: admin
+    password: changeme
   volume:
     data:
       size: 8Gi
