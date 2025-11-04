@@ -3,6 +3,7 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: homeassistant-zfs-sc
+  namespace: {{ .Release.Namespace }}
 parameters:
   recordsize: "128k"
   compression: "off"
@@ -15,7 +16,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: homeassistant-pv-time
-  namespace: homeassistant
+  namespace: {{ .Release.Namespace }}
   labels:
     app: homeassistant-label
 spec:
@@ -30,7 +31,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: homeassistant-pv-config
-  namespace: homeassistant
+  namespace: {{ .Release.Namespace }}
   labels:
     app: homeassistant-label
 spec:

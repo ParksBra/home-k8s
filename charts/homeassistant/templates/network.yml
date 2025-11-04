@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: homeassistant-service
-  namespace: homeassistant
+  namespace: {{ .Release.Namespace }}
 spec:
   selector:
     app: homeassistant-label
@@ -16,7 +16,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: homeassistant-ingress
-  namespace: homeassistant
+  namespace: {{ .Release.Namespace }}
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:

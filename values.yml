@@ -11,3 +11,11 @@ akri:
   udev:
     discovery:
       enabled: true
+openebs:
+  engines:
+    replicated:
+      mayastor:
+        enabled: false
+  zfs-localpv:
+    zfsNode:
+      kubeletDir: /var/lib/kubelet
