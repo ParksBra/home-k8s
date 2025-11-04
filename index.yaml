@@ -3,7 +3,7 @@ entries:
   akri:
   - apiVersion: v2
     appVersion: 0.13.8
-    created: "2025-11-03T18:55:27.8926215-08:00"
+    created: "2025-11-03T18:57:46.8805044-08:00"
     description: A Helm chart for Akri releases
     digest: 7e0143157338f7753d9b5b882efc0edc5f43e4d5483604b8544c05008f35afba
     icon: https://raw.githubusercontent.com/project-akri/akri-docs/main/art/icon/akri-icon-light.svg
@@ -14,7 +14,7 @@ entries:
     version: 0.13.8
   homeassistant:
   - apiVersion: v2
-    created: "2025-11-03T18:55:27.8931803-08:00"
+    created: "2025-11-03T18:57:46.881078-08:00"
     description: A Helm chart for Home Assistant
     digest: 6b49dac73b11ed052463585d0219d8b0cb8af7dda2896f9655b14ec273b034e9
     name: homeassistant
@@ -24,7 +24,7 @@ entries:
     version: 0.1.0
   homeassistant-environment:
   - apiVersion: v2
-    created: "2025-11-03T18:55:27.8915067-08:00"
+    created: "2025-11-03T18:57:46.8781995-08:00"
     dependencies:
     - name: akri
       repository: https://project-akri.github.io/akri
@@ -39,7 +39,7 @@ entries:
       repository: file://./charts/zigbee2mqtt
       version: 0.1.0
     description: A Helm chart for a MQTT brokered Home Assistant environment
-    digest: 68c6b3b0260886947661e6ab1883ef3c3bd81baa7f56caaf96e565cf812fc0c3
+    digest: 1f9b9ff8b0d89cde43da06eb622696b9f088a1d17737c60f5b19d8a0180e00a5
     name: homeassistant-environment
     type: application
     urls:
@@ -47,7 +47,7 @@ entries:
     version: 0.1.0
   mosquitto:
   - apiVersion: v2
-    created: "2025-11-03T18:55:27.8931803-08:00"
+    created: "2025-11-03T18:57:46.881078-08:00"
     description: A Helm chart for Mosquitto MQTT Broker
     digest: 0b99d0ef4ab7dc2f6647476e8541f51a6d2adb70f6e5a0bc8dcc989f9ffc8c51
     name: mosquitto
@@ -57,7 +57,7 @@ entries:
     version: 0.1.0
   zigbee2mqtt:
   - apiVersion: v2
-    created: "2025-11-03T18:55:27.894354-08:00"
+    created: "2025-11-03T18:57:46.881078-08:00"
     dependencies:
     - name: akri
       repository: https://project-akri.github.io/akri
@@ -69,4 +69,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ParksBra/home-k8s/initial_work/charts/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-03T18:55:27.8892885-08:00"
+generated: "2025-11-03T18:57:46.8753672-08:00"

@@ -20,7 +20,7 @@ spec:
         image: homeassistant/home-assistant:stable
         ports:
           - containerPort: 8123
-            name: homeassistant-web
+            name: ha-web
         resources: {}
         volumeMounts:
           - mountPath: /config

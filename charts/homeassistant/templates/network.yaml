@@ -10,7 +10,7 @@ spec:
   ports:
   - name: homeassistant
     port: {{ .Values.homeassistant.ingress.servicePort }}
-    targetPort: homeassistant-web
+    targetPort: ha-web
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
