@@ -25,4 +25,4 @@ spec:
   storageClassName: zigbee2mqtt-zfs-sc
   resources:
     requests:
-      storage: {{ (.Values.zigbee2mqtt.volume.data).size | default "16Gi" }}
+      storage: {{ (((.Values.zigbee2mqtt).volume).data).size | default "16Gi" }}

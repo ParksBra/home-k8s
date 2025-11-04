@@ -9,7 +9,7 @@ spec:
     app: zigbee2mqtt-label
   ports:
   - name: zigbee2mqtt
-    port: {{ (.Values.zigbee2mqtt.service).port | default 8080 }}
+    port: {{ ((.Values.zigbee2mqtt).service).port | default 8080 }}
     targetPort: zigbee2mqtt-web
 ---
 apiVersion: networking.k8s.io/v1
@@ -22,7 +22,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: {{ .Values.zigbee2mqtt.ingress.host }}
+  - host: {{ ((.Values.zigbee2mqtt).ingress).host }}
     http:
       paths:
       - pathType: Prefix
@@ -31,4 +31,4 @@ spec:
           service:
             name: zigbee2mqtt-service
             port:
-              number: {{ (.Values.zigbee2mqtt.service).port | default 8080 }}
+              number: {{ ((.Values.zigbee2mqtt).service).port | default 8080 }}
