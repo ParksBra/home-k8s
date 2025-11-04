@@ -9,7 +9,7 @@ spec:
     app: homeassistant-label
   ports:
   - name: homeassistant
-    port: {{ .Values.homeassistant.service.port }}
+    port: {{ .Values.homeassistant.ingress.servicePort }}
     targetPort: homeassistant-web
 ---
 apiVersion: networking.k8s.io/v1
@@ -31,4 +31,4 @@ spec:
           service:
             name: homeassistant-service
             port:
-              number: {{ .Values.homeassistant.service.port }}
+              number: {{ .Values.homeassistant.ingress.servicePort }}
