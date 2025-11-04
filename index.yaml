@@ -3,7 +3,7 @@ entries:
   akri:
   - apiVersion: v2
     appVersion: 0.13.8
-    created: "2025-11-03T19:08:53.8928969-08:00"
+    created: "2025-11-03T19:14:20.3592698-08:00"
     description: A Helm chart for Akri releases
     digest: 7e0143157338f7753d9b5b882efc0edc5f43e4d5483604b8544c05008f35afba
     icon: https://raw.githubusercontent.com/project-akri/akri-docs/main/art/icon/akri-icon-light.svg
@@ -12,11 +12,42 @@ entries:
     urls:
     - https://raw.githubusercontent.com/ParksBra/home-k8s/initial_work/charts/akri-0.13.8.tgz
     version: 0.13.8
+  cert-manager:
+  - annotations:
+      artifacthub.io/category: security
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/prerelease: "false"
+      artifacthub.io/signKey: |
+        fingerprint: 1020CF3C033D4F35BAE1C19E1226061C665DF13E
+        url: https://cert-manager.io/public-keys/cert-manager-keyring-2021-09-20-1020CF3C033D4F35BAE1C19E1226061C665DF13E.gpg
+    apiVersion: v2
+    appVersion: v1.19.1
+    created: "2025-11-03T19:14:20.3639335-08:00"
+    description: A Helm chart for cert-manager
+    digest: f72a727b1749df3521e7a65af5f18505f93b572d758841890270b150344b2b41
+    home: https://cert-manager.io
+    icon: https://raw.githubusercontent.com/cert-manager/community/4d35a69437d21b76322157e6284be4cd64e6d2b7/logo/logo-small.png
+    keywords:
+    - cert-manager
+    - kube-lego
+    - letsencrypt
+    - tls
+    kubeVersion: '>= 1.22.0-0'
+    maintainers:
+    - email: cert-manager-maintainers@googlegroups.com
+      name: cert-manager-maintainers
+      url: https://cert-manager.io
+    name: cert-manager
+    sources:
+    - https://github.com/cert-manager/cert-manager
+    urls:
+    - https://raw.githubusercontent.com/ParksBra/home-k8s/initial_work/charts/cert-manager-v1.19.1.tgz
+    version: v1.19.1
   homeassistant:
   - apiVersion: v2
-    created: "2025-11-03T19:08:53.8934854-08:00"
+    created: "2025-11-03T19:14:20.3654441-08:00"
     description: A Helm chart for Home Assistant
-    digest: 51af185ff48d5285ade1bcef490578e958f9da1e23ecdd6171f2887f4aaddfa2
+    digest: b5de9fc8fdee80ab21075e748f7451a8eecbcd064e31ab9976a58e8bf9cce60d
     name: homeassistant
     type: application
     urls:
@@ -24,8 +55,11 @@ entries:
     version: 0.1.0
   homeassistant-environment:
   - apiVersion: v2
-    created: "2025-11-03T19:08:53.8912123-08:00"
+    created: "2025-11-03T19:14:20.3582569-08:00"
     dependencies:
+    - name: cert-manager
+      repository: https://charts.jetstack.io
+      version: '>=1.19.1'
     - name: akri
       repository: https://project-akri.github.io/akri
       version: '>=0.13.8'
@@ -39,7 +73,7 @@ entries:
       repository: file://./charts/zigbee2mqtt
       version: 0.1.0
     description: A Helm chart for a MQTT brokered Home Assistant environment
-    digest: de997a7aaebb2e6b6ae28af9a05a6eb56608ae9bbffcc66234e657533ab64646
+    digest: 688246382c069ae205573fcbcdeb4c6b91fa7293b9b0a001b285a33aebe36cf2
     name: homeassistant-environment
     type: application
     urls:
@@ -47,9 +81,9 @@ entries:
     version: 0.1.0
   mosquitto:
   - apiVersion: v2
-    created: "2025-11-03T19:08:53.8945908-08:00"
+    created: "2025-11-03T19:14:20.3654441-08:00"
     description: A Helm chart for Mosquitto MQTT Broker
-    digest: af67040ee85633547efe2b52d097a7ecd18b504c9f74473a481565ae96ed6a8f
+    digest: a86e089b1d3103f4ef5e4d7ae460875b5b9cdaf64eeb1d257a62d99f5e7623d1
     name: mosquitto
     type: application
     urls:
@@ -57,16 +91,19 @@ entries:
     version: 0.1.0
   zigbee2mqtt:
   - apiVersion: v2
-    created: "2025-11-03T19:08:53.8951603-08:00"
+    created: "2025-11-03T19:14:20.3654441-08:00"
     dependencies:
+    - name: cert-manager
+      repository: https://charts.jetstack.io
+      version: '>=1.19.1'
     - name: akri
       repository: https://project-akri.github.io/akri
       version: '>=0.13.8'
     description: A Helm chart for Zigbee2MQTT
-    digest: 7eaeb329fe8c9c9ff2de73929c13873f50648828bf3cd7799d3fe7dbddac1c74
+    digest: cbc11c5e838b9fe9d0821fb77c999c827b69b14a848b2563065892e0ab283015
     name: zigbee2mqtt
     type: application
     urls:
     - https://raw.githubusercontent.com/ParksBra/home-k8s/initial_work/charts/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-03T19:08:53.8882988-08:00"
+generated: "2025-11-03T19:14:20.3486944-08:00"

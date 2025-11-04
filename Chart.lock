@@ -1,4 +1,7 @@
 dependencies:
+- name: cert-manager
+  repository: https://charts.jetstack.io
+  version: v1.19.1
 - name: akri
   repository: https://project-akri.github.io/akri
   version: 0.13.8
@@ -11,5 +14,5 @@ dependencies:
 - name: zigbee2mqtt
   repository: file://./charts/zigbee2mqtt
   version: 0.1.0
-digest: sha256:b483a00457659c6c5027a80dc520b2ac722b071d71dd0d5fc90edca7eb9ac52f
-generated: "2025-11-03T19:08:34.5693951-08:00"
+digest: sha256:5287bef322e6a066f6ce43b22a1e8618f6227426fa17c38b9769472056ee8eae
+generated: "2025-11-03T19:12:43.3560577-08:00"
