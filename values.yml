@@ -2,15 +2,29 @@ homeassistant:
   ingress:
     host: ha.parkl.ee
     servicePort: 443
+  volume:
+    data:
+      size: 64Gi
+    time:
+      size: 8Gi
 
 zigbee2mqtt:
   ingress:
     host: z2m.parkl.ee
     servicePort: 443
+  radio:
+    vendorId: "10c4"
+    productId: "ea60"
+  volume:
+    data:
+      size: 16Gi
 
 mosquitto:
   websocketPort: 9001
   tlsPort: 8883
+  volume:
+    data:
+      size: 8Gi
 
 akri:
   kubernetesDistro: k8s
