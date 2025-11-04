@@ -13,8 +13,8 @@ zigbee2mqtt:
     host: z2m.parkl.ee
     servicePort: 443
   radio:
-    vendorId: "10c4"
-    productId: "ea60"
+    vendorId: 10c4
+    productId: ea60
   volume:
     data:
       size: 16Gi

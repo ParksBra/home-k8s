@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   homeassistant-environment:
   - apiVersion: v2
-    created: "2025-11-03T17:22:48.0229954-08:00"
+    created: "2025-11-03T17:27:25.2644422-08:00"
     dependencies:
     - name: homeassistant
       repository: file://./charts/homeassistant
@@ -14,9 +14,9 @@ entries:
       repository: file://./charts/zigbee2mqtt
       version: 0.1.0
     description: A Helm chart for a MQTT brokered Home Assistant environment
-    digest: b8ded5fc6b9a1d89b6d97f57ac123ce19440b2bcad3729d8edac3bcfdba27cc0
+    digest: b555c2005dfa348f2f03277b57b609868f59b083fc258b0d663157c7cef14233
     name: homeassistant-environment
     urls:
     - https://raw.githubusercontent.com/ParksBra/home-k8s/initial_work/homeassistant-environment-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-03T17:22:48.0224386-08:00"
+generated: "2025-11-03T17:27:25.263854-08:00"
