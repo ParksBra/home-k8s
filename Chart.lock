@@ -9,4 +9,4 @@ dependencies:
   repository: file://./charts/zigbee2mqtt
   version: 0.1.0
 digest: sha256:2cd394bd38d500aacde4043bd1c2b9d869626f8f1fdb1191fc1aae5913ede2dc
-generated: "2025-11-03T19:16:19.8923027-08:00"
+generated: "2025-11-03T19:22:12.9026116-08:00"
