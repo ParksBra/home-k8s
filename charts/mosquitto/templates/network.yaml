@@ -9,8 +9,8 @@ spec:
     app: mosquitto-label
   ports:
   - name: mqtt5
-    port: {{ (.Values.mosquitto).tlsPort }}
+    port: {{ .Values.mosquitto.tlsPort }}
     targetPort: mqtt-tls
   - name: mqtt5-websocket
-    port: {{ (.Values.mosquitto).websocketPort }}
+    port: {{ .Values.mosquitto.websocketPort }}
     targetPort: mqtt-websocket

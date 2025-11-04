@@ -2,6 +2,7 @@ apiVersion: v2
 name: zigbee2mqtt
 description: A Helm chart for Zigbee2MQTT
 version: 0.1.0
+type: application
 dependencies:
 - name: akri
   version: ">=0.1.0"

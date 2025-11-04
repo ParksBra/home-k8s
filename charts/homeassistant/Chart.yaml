@@ -2,3 +2,4 @@ apiVersion: v2
 name: homeassistant
 description: A Helm chart for Home Assistant
 version: 0.1.0
+type: application

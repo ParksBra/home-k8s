@@ -9,7 +9,7 @@ parameters:
   compression: "off"
   dedup: "off"
   fstype: "zfs"
-  poolname: "zfspv-pool"
+  poolname: "{{ .Values.zfs.poolName }}"
 provisioner: zfs.csi.openebs.io
 ---
 apiVersion: v1

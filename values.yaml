@@ -40,3 +40,6 @@ openebs:
   zfs-localpv:
     zfsNode:
       kubeletDir: /var/lib/kubelet
+
+zfs:
+  poolName: zfspv-pool

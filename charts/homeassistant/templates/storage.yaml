@@ -9,7 +9,7 @@ parameters:
   compression: "off"
   dedup: "off"
   fstype: "zfs"
-  poolname: "zfspv-pool"
+  poolname: "{{ .Values.zfs.poolName }}"
 provisioner: zfs.csi.openebs.io
 ---
 apiVersion: v1
@@ -25,7 +25,7 @@ spec:
   storageClassName: homeassistant-zfs-sc
   resources:
     requests:
-      storage: {{ (((.Values.homeassistant).volume).time).size | default "8Gi" }}
+      storage: {{ .Values.homeassistant.volume.time.size }}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -40,4 +40,4 @@ spec:
   storageClassName: homeassistant-zfs-sc
   resources:
     requests:
-      storage: {{ (((.Values.homeassistant).volume).data).size | default "16Gi" }}
+      storage: {{ .Values.homeassistant.volume.data.size }}

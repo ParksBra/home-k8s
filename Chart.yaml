@@ -2,6 +2,7 @@ apiVersion: v2
 name: homeassistant-environment
 description: A Helm chart for a MQTT brokered Home Assistant environment
 version: 0.1.0
+type: application
 dependencies:
   - name: homeassistant
     version: "0.1.0"

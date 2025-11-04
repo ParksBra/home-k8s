@@ -1,0 +1,12 @@
+homeassistant:
+  ingress:
+    host: homeassistant.local
+    servicePort: 443
+  volume:
+    data:
+      size: 16Gi
+    time:
+      size: 8Gi
+
+zfs:
+  poolName: zfspv-pool

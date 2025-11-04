@@ -2,3 +2,4 @@ apiVersion: v2
 name: mosquitto
 description: A Helm chart for Mosquitto MQTT Broker
 version: 0.1.0
+type: application

@@ -1,0 +1,13 @@
+zigbee2mqtt:
+  ingress:
+    host: zigbee2mqtt.local
+    servicePort: 443
+  radio:
+    vendorId: ffff
+    productId: ffff
+  volume:
+    data:
+      size: 16Gi
+
+zfs:
+  poolName: zfspv-pool
