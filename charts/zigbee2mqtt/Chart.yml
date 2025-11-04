@@ -4,5 +4,5 @@ description: A Helm chart for Zigbee2MQTT
 version: 0.1.0
 dependencies:
 - name: akri
-  version: latest
+  version: ">=0.1.0"
   repository: https://project-akri.github.io/akri/

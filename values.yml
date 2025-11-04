@@ -6,6 +6,9 @@ zigbee2mqtt:
   ingress:
     host: z2m.parkl.ee
     servicePort: 443
+mosquitto:
+  websocketPort: 9001
+  tlsPort: 8883
 akri:
   kubernetesDistro: k8s
   udev:
