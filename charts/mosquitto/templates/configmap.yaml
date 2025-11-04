@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mosquitto-config
+data:
+  mosquitto.conf: |
+    persistence true
+    persistence_location /mosquitto/data/
+    log_dest stdout
+
+    password_file /mosquitto/config/password.txt
+    
+    # MQTTS listener
+    listener {{ .Values.mosquitto.ingress.tlsPort }}
+    protocol mqtt
+
+    cafile /etc/ssl/certs/ca-certificates.crt
+    keyfile /mosquitto/certs/tls.key
+    certfile /mosquitto/certs/tls.crt
+
+    # WS Listener
+    listener {{ .Values.mosquitto.ingress.websocketPort }}
+    protocol websockets
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mosquitto-password
+data:
+  password.txt: |
+    {{ .Values.mosquitto.account.username }}:{{ .Values.mosquitto.account.password }}

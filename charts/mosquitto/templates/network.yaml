@@ -9,8 +9,32 @@ spec:
     app: mosquitto-label
   ports:
   - name: mqtt5
-    port: {{ .Values.mosquitto.tlsPort }}
+    port: {{ .Values.mosquitto.ingress.tlsPort }}
     targetPort: mqtt-tls
   - name: mqtt5-websocket
-    port: {{ .Values.mosquitto.websocketPort }}
+    port: {{ .Values.mosquitto.ingress.websocketPort }}
     targetPort: mqtt-websocket
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mosquitto
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - {{ .Values.mosquitto.ingress.host }}
+    secretName: mosquitto-certs
+  rules:
+  - host: {{ .Values.mosquitto.ingress.host }}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mosquitto-ws
+            port: 
+              number: {{ .Values.mosquitto.ingress.websocketPort }}

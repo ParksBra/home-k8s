@@ -20,8 +20,13 @@ zigbee2mqtt:
       size: 16Gi
 
 mosquitto:
-  websocketPort: 9001
-  tlsPort: 8883
+  ingress:
+    host: mqtt.parkl.ee
+    websocketPort: 9001
+    tlsPort: 8883
+  account:
+    username: admin
+    password: changeme
   volume:
     data:
       size: 8Gi
