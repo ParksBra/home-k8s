@@ -1,0 +1,14 @@
+mosquitto:
+  ingress:
+    subDomain: mqtt
+    websocketPort: 9001
+    tlsPort: 8883
+  account:
+    username: admin
+    password: changeme
+  volume:
+    data:
+      size: 8Gi
+
+zfs:
+  poolName: zfspv-pool

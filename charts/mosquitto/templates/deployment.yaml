@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosquitto
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mosquitto-label
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mosquitto-label
+    spec:
+      containers:
+      - name: mosquitto
+        image: eclipse-mosquitto:stable
+        ports:
+        - containerPort: 8883
+          name: mqtt-tls
+        - containerPort: 9001
+          name: mqtt-websocket
+        volumeMounts:
+        - mountPath: /mosquitto/config/mosquitto.conf
+          subPath: mosquitto.conf
+          name: config
+        - mountPath: /mosquitto/certs/
+          name: certs
+        - mountPath: /mosquitto/data/
+          name: data
+        - mountPath: /mosquitto/config/password.txt
+          subPath: password.txt
+          name: mosquitto-password
+      volumes:
+      - name: config
+        configMap:
+          name: mosquitto-config
+      - name: mosquitto-password
+        configMap:
+          name: mosquitto-password
+      - name: certs
+        secret:
+          secretName: mosquitto-certs
+      - name: data
+        persistentVolumeClaim:
+          claimName: mosquitto-pv-data

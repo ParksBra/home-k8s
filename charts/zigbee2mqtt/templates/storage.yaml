@@ -1,0 +1,28 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: zigbee2mqtt-zfs-sc
+  namespace: {{ .Release.Namespace }}
+parameters:
+  recordsize: "128k"
+  compression: "off"
+  dedup: "off"
+  fstype: "zfs"
+  poolname: {{ .Values.zfs.poolName }}
+provisioner: zfs.csi.openebs.io
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: zigbee2mqtt-pv-data
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: zigbee2mqtt-label
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: zigbee2mqtt-zfs-sc
+  resources:
+    requests:
+      storage: {{ .Values.zigbee2mqtt.volume.data.size }}

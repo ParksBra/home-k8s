@@ -1,0 +1,28 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: mosquitto-zfs-sc
+  namespace: {{ .Release.Namespace }}
+parameters:
+  recordsize: "128k"
+  compression: "off"
+  dedup: "off"
+  fstype: "zfs"
+  poolname: "{{ .Values.zfs.poolName }}"
+provisioner: zfs.csi.openebs.io
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mosquitto-pv-data
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: mosquitto-label
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: mosquitto-zfs-sc
+  resources:
+    requests:
+      storage: {{ .Values.mosquitto.volume.data.size }}

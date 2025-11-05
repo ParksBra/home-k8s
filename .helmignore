@@ -1,0 +1,6 @@
+.helmignore
+.git
+.github
+.venv
+README.md
+LICENSE
