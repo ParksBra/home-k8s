@@ -11,6 +11,9 @@ spec:
   tls:
   - hosts:
     - "{{ .Values.network.ingress.host }}"
+    - "{{ .Values.homeassistant.ingress.subDomain }}.{{ .Values.network.ingress.host }}"
+    - "{{ .Values.mosquitto.ingress.subDomain }}.{{ .Values.network.ingress.host }}"
+    - "{{ .Values.zigbee2mqtt.ingress.subDomain }}.{{ .Values.network.ingress.host }}"
     secretName: external-cert
   rules:
   - host: "{{ .Values.homeassistant.ingress.subDomain }}.{{ .Values.network.ingress.host }}"
