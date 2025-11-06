@@ -15,4 +15,4 @@ spec:
           email: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.email }}
           apiTokenSecretRef:
             name: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiTokenSecretName }}
-            key: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiKTokenSecretKey }}
+            key: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiTokenSecretKey }}
