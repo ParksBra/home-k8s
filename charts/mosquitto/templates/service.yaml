@@ -8,10 +8,11 @@ spec:
   selector:
     app.kubernetes.io/name: mosquitto-label
   ports:
-  - name: mqtt5
+  - name: mqtt-tls
+    protocol: TCP
     port: {{ .Values.mosquitto.ingress.tlsPort }}
     targetPort: mqtt-tls
-  - name: mqtt5-websocket
+  - name: mqtt-websocket
     protocol: TCP
     port: {{ .Values.mosquitto.ingress.websocketPort }}
     targetPort: mqtt-websocket

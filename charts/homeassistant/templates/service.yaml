@@ -8,7 +8,7 @@ spec:
   selector:
     app.kubernetes.io/name: homeassistant-label
   ports:
-  - name: homeassistant
+  - name: ha-web
     protocol: TCP
     port: {{ .Values.homeassistant.ingress.servicePort }}
     targetPort: ha-web

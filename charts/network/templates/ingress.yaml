@@ -23,7 +23,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ha-web
+            name: homeassistant-service
             port: 
               number: {{ .Values.homeassistant.ingress.servicePort }}
   - host: "{{ .Values.mosquitto.ingress.subDomain }}.{{ .Values.network.ingress.host }}"
@@ -33,7 +33,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: mosquitto-ws
+            name: mosquitto-service
             port:
               number: {{ .Values.mosquitto.ingress.websocketPort }}
   - host: "{{ .Values.zigbee2mqtt.ingress.subDomain }}.{{ .Values.network.ingress.host }}"
@@ -43,6 +43,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: zigbee2mqtt-web
+            name: zigbee2mqtt-service
             port:
               number: {{ .Values.zigbee2mqtt.ingress.servicePort }}

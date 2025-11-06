@@ -18,7 +18,7 @@ spec:
         image: ghcr.io/koenkk/zigbee2mqtt:stable
         ports:
         - containerPort: 8080
-          name: zigbee2mqtt-web
+          name: z2m-web
         volumeMounts:
         - mountPath: /app/data/
           name: data
