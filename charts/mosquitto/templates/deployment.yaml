@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: mosquitto
-        image: eclipse-mosquitto:stable
+        image: eclipse-mosquitto
         ports:
         - containerPort: 8883
           name: mqtt-tls
