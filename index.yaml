@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   homeassistant:
   - apiVersion: v2
+    created: "2025-11-06T06:38:40.64419223Z"
+    description: A Helm chart for Home Assistant
+    digest: 582c918b496a463dbe472194492a6334862dc777d38e8217f2e16ca6f93c28c8
+    name: homeassistant
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/homeassistant-0.1.2/homeassistant-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     created: "2025-11-05T11:00:31.499488292Z"
     description: A Helm chart for Home Assistant
     digest: bc852353ebbc009de06787a44760ecd0dc2f30fc473c8da8f9d3241980e49259
@@ -20,6 +29,15 @@ entries:
     - https://github.com/ParksBra/home-k8s/releases/download/homeassistant-0.1.0/homeassistant-0.1.0.tgz
     version: 0.1.0
   mosquitto:
+  - apiVersion: v2
+    created: "2025-11-06T06:38:40.893525563Z"
+    description: A Helm chart for Mosquitto MQTT Broker
+    digest: 7f3db8a8d644351b3505b218151810583324fe386d9baa07fd5aa97f8a2786ed
+    name: mosquitto
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/mosquitto-0.1.4/mosquitto-0.1.4.tgz
+    version: 0.1.4
   - apiVersion: v2
     created: "2025-11-06T05:59:12.622781825Z"
     description: A Helm chart for Mosquitto MQTT Broker
@@ -57,6 +75,15 @@ entries:
     - https://github.com/ParksBra/home-k8s/releases/download/mosquitto-0.1.0/mosquitto-0.1.0.tgz
     version: 0.1.0
   network:
+  - apiVersion: v2
+    created: "2025-11-06T06:38:41.100876326Z"
+    description: A Helm chart for network components
+    digest: 9ec1327cfc7d5f2f852522d5929f9bda0785e47867a5168e2bd77f31d5eb0eb1
+    name: network
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/network-0.1.11/network-0.1.11.tgz
+    version: 0.1.11
   - apiVersion: v2
     created: "2025-11-06T05:47:50.324937217Z"
     description: A Helm chart for network components
@@ -149,6 +176,15 @@ entries:
     version: 0.1.0
   zigbee2mqtt:
   - apiVersion: v2
+    created: "2025-11-06T06:38:41.328682341Z"
+    description: A Helm chart for Zigbee2MQTT
+    digest: e802d92b83788c3ab5746edcbb4fe389e8af4909c144c243ed059795160fb65e
+    name: zigbee2mqtt
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.2/zigbee2mqtt-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     created: "2025-11-05T11:00:32.039526299Z"
     description: A Helm chart for Zigbee2MQTT
     digest: 19e53405a2b390e52d73b8df328b5e6bbdfb9cf1fd7d64a220e846f2b322c777
@@ -166,4 +202,4 @@ entries:
     urls:
     - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.0/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-06T05:59:12.622826228Z"
+generated: "2025-11-06T06:38:41.328769183Z"
