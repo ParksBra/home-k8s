@@ -7,12 +7,15 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: mosquitto-label
+  type: NodePort
   ports:
   - name: mqtt-tls
     protocol: TCP
     port: {{ .Values.mosquitto.ingress.tlsPort }}
     targetPort: mqtt-tls
+    nodePort: {{ .Values.mosquitto.ingress.tlsNodePort }}
   - name: mqtt-websocket
     protocol: TCP
     port: {{ .Values.mosquitto.ingress.websocketPort }}
     targetPort: mqtt-websocket
+    nodePort: {{ .Values.mosquitto.ingress.websocketNodePort }}

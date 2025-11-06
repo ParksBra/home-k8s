@@ -1,6 +1,7 @@
 homeassistant:
   ingress:
-    servicePort: 443
+    servicePort: 8123
+    nodePort: 38123
     subDomain: ha
   volume:
     data:

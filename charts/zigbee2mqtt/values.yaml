@@ -1,7 +1,8 @@
 zigbee2mqtt:
   ingress:
     subDomain: z2m
-    servicePort: 443
+    servicePort: 80
+    nodePort: 38234
   radio:
     vendorId: ffff
     productId: ffff

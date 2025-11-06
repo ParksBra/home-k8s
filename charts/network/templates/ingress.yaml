@@ -46,3 +46,4 @@ spec:
             name: zigbee2mqtt-service
             port:
               number: {{ .Values.zigbee2mqtt.ingress.servicePort }}
+              

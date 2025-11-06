@@ -2,7 +2,9 @@ mosquitto:
   ingress:
     subDomain: mqtt
     websocketPort: 9001
+    websocketNodePort: 30001
     tlsPort: 8883
+    tlsNodePort: 30083
   account:
     username: admin
     password: changeme
