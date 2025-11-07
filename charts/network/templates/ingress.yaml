@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/websocket-services: "homeassistant-service,mosquitto-service,zigbee2mqtt-service"
 spec:
   ingressClassName: nginx
   tls:
