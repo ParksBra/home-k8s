@@ -8,6 +8,15 @@ homeassistant:
       size: 16Gi
     time:
       size: 8Gi
+  config:
+    configuration: |
+      default_config:
+      logger:
+        default: info
+      automation: !include automations.yaml
+      script: !include scripts.yaml
+      scene: !include scenes.yaml
+      group: !include groups.yaml
 
 zfs:
   poolName: zfspv-pool

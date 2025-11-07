@@ -23,6 +23,9 @@ spec:
             name: ha-web
         resources: {}
         volumeMounts:
+          - mountPath: /config/configuration.yaml
+            subPath: configuration.yaml
+            name: homeassistant-configuration
           - mountPath: /config
             name: homeassistant-pv-config
           - mountPath: /etc/localtime
@@ -30,6 +33,9 @@ spec:
             readOnly: true
       restartPolicy: Always
       volumes:
+        - name: homeassistant-configuration
+          configMap:
+            name: homeassistant-configuration
         - name: homeassistant-pv-config
           persistentVolumeClaim:
             claimName: homeassistant-pv-config
