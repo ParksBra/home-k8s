@@ -24,9 +24,9 @@ spec:
           name: data
         resources:
           limits:
-            akri.sh/akri-radio: "1"
+            akri.sh/{{ .Values.zigbee2mqtt.radio.akri.instance }}: "1"
           requests:
-            akri.sh/akri-radio: "1"
+            akri.sh/{{ .Values.zigbee2mqtt.radio.akri.instance }}: "1"
       volumes:
       - name: data
         persistentVolumeClaim:

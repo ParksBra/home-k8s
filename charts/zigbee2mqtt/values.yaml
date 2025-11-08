@@ -6,6 +6,10 @@ zigbee2mqtt:
   radio:
     vendorId: ffff
     productId: ffff
+    enableAkri: false
+    akri:
+      enabled: true
+      instance: akri-udev
   volume:
     data:
       size: 16Gi
