@@ -4,7 +4,7 @@ mosquitto:
     websocketPort: 9001
     websocketNodePort: 30001
     tlsPort: 8883
-    tlsNodePort: 30083
+    port: 1883
   account:
     username: admin
     password: changeme
