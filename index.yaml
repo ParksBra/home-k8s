@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   homeassistant:
   - apiVersion: v2
+    created: "2025-11-08T00:22:44.371137257Z"
+    description: A Helm chart for Home Assistant
+    digest: 943255db85df08fc5657b14ac8387453cf55d985b43d9f0e2700358cd85d5aff
+    name: homeassistant
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/homeassistant-0.1.7/homeassistant-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     created: "2025-11-07T23:50:32.322226585Z"
     description: A Helm chart for Home Assistant
     digest: 4b781e91400759415479a3d3172817ec7607df4e6857fdde12d472bc45bb7baf
@@ -274,4 +283,4 @@ entries:
     urls:
     - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.0/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-07T23:50:32.322312004Z"
+generated: "2025-11-08T00:22:44.371201287Z"
