@@ -2,7 +2,6 @@ apiVersion: akri.sh/v0
 kind: Configuration
 metadata:
   name: akri-radio
-  namespace: akri
   labels:
     app.kubernetes.io/name: zigbee2mqtt-label
 spec:
