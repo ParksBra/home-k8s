@@ -22,11 +22,13 @@ spec:
         volumeMounts:
         - mountPath: /app/data/
           name: data
+        {{- if .Values.zigbee2mqtt.radio.akri.enabled }}
         resources:
           limits:
             akri.sh/{{ .Values.zigbee2mqtt.radio.akri.instance }}: "1"
           requests:
             akri.sh/{{ .Values.zigbee2mqtt.radio.akri.instance }}: "1"
+        {{- end }}
       volumes:
       - name: data
         persistentVolumeClaim:
