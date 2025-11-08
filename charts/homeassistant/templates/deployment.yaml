@@ -15,6 +15,15 @@ spec:
         app.kubernetes.io/name: homeassistant-label
     spec:
       hostNetwork: true
+      initContainers:
+      - name: setup-dependent-config-files
+        image: busybox:latest
+        command: ["sh", "-c"]
+        args:
+          - touch /config/automations.yaml /config/scripts.yaml /config/scenes.yaml /config/groups.yaml
+        volumeMounts:
+          - mountPath: /config
+            name: homeassistant-pv-config
       containers:
       - name: homeassistant
         image: homeassistant/home-assistant:stable
@@ -31,8 +40,6 @@ spec:
           - mountPath: /etc/localtime
             name: homeassistant-pv-time
             readOnly: true
-        command: ["/bin/touch"]
-        args: ["/config/automations.yaml", "/config/scripts.yaml", "/config/scenes.yaml", "/config/groups.yaml"]
       restartPolicy: Always
       volumes:
         - name: homeassistant-configuration
