@@ -257,6 +257,15 @@ entries:
     version: 0.1.0
   zigbee2mqtt:
   - apiVersion: v2
+    created: "2025-11-08T02:39:21.189858715Z"
+    description: A Helm chart for Zigbee2MQTT
+    digest: 597ad774d87fde4443250688fa9c8b9f0185d1c05bebd5f67feddf4273d45117
+    name: zigbee2mqtt
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.7/zigbee2mqtt-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     created: "2025-11-08T02:25:27.036930565Z"
     description: A Helm chart for Zigbee2MQTT
     digest: 8678f091d05efb436df23b35e117fa848086e20693cdebb9fd50754c9c9620f6
@@ -310,4 +319,4 @@ entries:
     urls:
     - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.0/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-08T02:25:27.036990737Z"
+generated: "2025-11-08T02:39:21.189972829Z"
