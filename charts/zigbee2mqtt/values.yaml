@@ -10,6 +10,8 @@ zigbee2mqtt:
     akri:
       enabled: true
       instance: akri-udev
+  storage:
+    reclaimPolicy: Delete
   volume:
     data:
       size: 16Gi

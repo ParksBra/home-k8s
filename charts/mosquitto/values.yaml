@@ -8,6 +8,8 @@ mosquitto:
   account:
     username: admin
     password: changeme
+  storage:
+    reclaimPolicy: Delete
   volume:
     data:
       size: 8Gi

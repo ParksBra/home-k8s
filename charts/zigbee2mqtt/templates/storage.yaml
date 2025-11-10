@@ -10,6 +10,7 @@ parameters:
   dedup: "off"
   fstype: "zfs"
   poolname: {{ .Values.zfs.poolName }}
+reclaimPolicy: {{ .Values.zigbee2mqtt.storage.reclaimPolicy }}
 provisioner: zfs.csi.openebs.io
 ---
 apiVersion: v1

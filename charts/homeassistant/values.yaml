@@ -3,6 +3,8 @@ homeassistant:
     servicePort: 8123
     nodePort: 38123
     subDomain: ha
+  storage:
+    reclaimPolicy: Delete
   volume:
     data:
       size: 16Gi
