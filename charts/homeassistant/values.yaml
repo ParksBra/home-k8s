@@ -1,6 +1,6 @@
 homeassistant:
   ingress:
-    servicePort: &homeassistant_service_port 8123
+    servicePort: 8123
     nodePort: 38123
     subDomain: ha
   volume:
@@ -17,11 +17,6 @@ homeassistant:
       script: !include scripts.yaml
       scene: !include scenes.yaml
       group: !include groups.yaml
-      http:
-        server_port: *homeassistant_service_port
-        ip_ban_enabled: true
-        login_attempts_threshold: 10
-        use_x_forwarded_for: true
 
 zfs:
   poolName: zfspv-pool
