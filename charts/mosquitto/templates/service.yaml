@@ -11,11 +11,11 @@ spec:
   ports:
   - name: mqtt
     protocol: TCP
-    port: {{ .Values.mosquitto.ingress.port }}
+    port: {{ .Values.mosquitto.ingress.mqttPort }}
     targetPort: mqtt
   - name: mqtt-tls
     protocol: TCP
-    port: {{ .Values.mosquitto.ingress.tlsPort }}
+    port: {{ .Values.mosquitto.ingress.mqttsPort }}
     targetPort: mqtt-tls
   - name: mqtt-websocket
     protocol: TCP

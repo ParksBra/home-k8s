@@ -12,10 +12,10 @@ data:
     password_file /mosquitto/config/password.txt
 
     # MQTT listener
-    listener {{ .Values.mosquitto.ingress.port }}
+    listener 1883
     protocol mqtt
     # MQTTS listener
-    listener {{ .Values.mosquitto.ingress.tlsPort }}
+    listener 8883
     protocol mqtt
 
     cafile /etc/ssl/certs/ca-certificates.crt
@@ -23,7 +23,7 @@ data:
     certfile /mosquitto/certs/tls.crt
 
     # WS Listener
-    listener {{ .Values.mosquitto.ingress.websocketPort }}
+    listener 9001
     protocol websockets
 ---
 apiVersion: v1
