@@ -3,8 +3,8 @@ mosquitto:
     subDomain: mqtt
     websocketPort: 9001
     websocketNodePort: 30001
-    tlsPort: 8883
-    port: 1883
+    mqttsPort: 8883
+    mqttPort: 1883
   account:
     username: admin
     password: changeme

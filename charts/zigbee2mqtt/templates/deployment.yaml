@@ -29,6 +29,8 @@ spec:
           requests:
             akri.sh/{{ .Values.zigbee2mqtt.radio.akri.instance }}: "1"
         {{- end }}
+      dnsPolicty: ClusterFirst
+      restartPolicy: Always
       volumes:
       - name: data
         persistentVolumeClaim:

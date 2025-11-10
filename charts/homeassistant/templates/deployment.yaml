@@ -40,6 +40,7 @@ spec:
           - mountPath: /etc/localtime
             name: homeassistant-pv-time
             readOnly: true
+      dnsPolicty: ClusterFirst
       restartPolicy: Always
       volumes:
         - name: homeassistant-configuration
