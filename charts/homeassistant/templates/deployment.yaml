@@ -22,7 +22,7 @@ spec:
           - touch /config/automations.yaml /config/scripts.yaml /config/scenes.yaml /config/groups.yaml
         volumeMounts:
           - mountPath: /config
-            name: homeassistant-pv-config
+            name: homeassistant-data
       containers:
       - name: homeassistant
         image: homeassistant/home-assistant:stable
@@ -35,7 +35,7 @@ spec:
             subPath: configuration.yaml
             name: homeassistant-config-map
           - mountPath: /config
-            name: homeassistant-config
+            name: homeassistant-data
           - mountPath: /etc/localtime
             name: homeassistant-time
             readOnly: true
@@ -46,9 +46,9 @@ spec:
         - name: homeassistant-config-map
           configMap:
             name: homeassistant-config-map
-        - name: homeassistant-config
+        - name: homeassistant-data
           persistentVolumeClaim:
-            claimName: homeassistant-pvc-config
+            claimName: homeassistant-pvc-data
         - name: homeassistant-time
           persistentVolumeClaim:
             claimName: homeassistant-pvc-time
