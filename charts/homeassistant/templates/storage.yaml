@@ -14,21 +14,6 @@ reclaimPolicy: Retain
 provisioner: zfs.csi.openebs.io
 ---
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: homeassistant-pv-time
-spec:
-  capacity:
-    storage: {{ .Values.homeassistant.volume.time.size }}
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: homeassistant-zfs-sc
-  persistentVolumeReclaimPolicy: Retain
-  csi:
-    driver: zfs.csi.openebs.io
-    volumeHandle: homeassistant-pv-time
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: homeassistant-pvc-time
@@ -36,7 +21,6 @@ metadata:
   labels:
     app.kubernetes.io/name: homeassistant-label
 spec:
-  volumeName: homeassistant-pv-time
   accessModes:
     - ReadWriteOnce
   storageClassName: homeassistant-zfs-sc
