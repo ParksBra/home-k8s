@@ -45,21 +45,6 @@ spec:
       storage: {{ .Values.homeassistant.volume.time.size }}
 ---
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: homeassistant-pv-data
-spec:
-  capacity:
-    storage: {{ .Values.homeassistant.volume.data.size }}
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: homeassistant-zfs-sc
-  persistentVolumeReclaimPolicy: Retain
-  csi:
-    driver: zfs.csi.openebs.io
-    volumeHandle: homeassistant-pv-data
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: homeassistant-pvc-data
@@ -67,7 +52,6 @@ metadata:
   labels:
     app.kubernetes.io/name: homeassistant-label
 spec:
-  volumeName: homeassistant-pv-data
   accessModes:
     - ReadWriteOnce
   storageClassName: homeassistant-zfs-sc

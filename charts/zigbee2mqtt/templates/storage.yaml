@@ -14,21 +14,6 @@ reclaimPolicy: Retain
 provisioner: zfs.csi.openebs.io
 ---
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: zigbee2mqtt-pv-data
-spec:
-  capacity:
-    storage: {{ .Values.zigbee2mqtt.volume.data.size }}
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: zigbee2mqtt-zfs-sc
-  persistentVolumeReclaimPolicy: Retain
-  csi:
-    driver: zfs.csi.openebs.io
-    volumeHandle: zigbee2mqtt-pv-data
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: zigbee2mqtt-pvc-data
@@ -36,7 +21,6 @@ metadata:
   labels:
     app.kubernetes.io/name: zigbee2mqtt-label
 spec:
-  volumeName: zigbee2mqtt-pv-data
   accessModes:
     - ReadWriteOnce
   storageClassName: zigbee2mqtt-zfs-sc
