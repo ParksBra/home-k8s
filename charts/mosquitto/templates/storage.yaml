@@ -14,21 +14,6 @@ reclaimPolicy: Retain
 provisioner: zfs.csi.openebs.io
 ---
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: mosquitto-pv-data
-spec:
-  capacity:
-    storage: {{ .Values.mosquitto.volume.data.size }}
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: mosquitto-zfs-sc
-  persistentVolumeReclaimPolicy: Retain
-  csi:
-    driver: zfs.csi.openebs.io
-    volumeHandle: mosquitto-pv-data
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mosquitto-pvc-data
@@ -36,7 +21,6 @@ metadata:
   labels:
     app.kubernetes.io/name: mosquitto-label
 spec:
-  volumeName: mosquitto-pv-data
   accessModes:
     - ReadWriteOnce
   storageClassName: mosquitto-zfs-sc
