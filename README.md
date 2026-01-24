@@ -36,7 +36,7 @@ This lab is hosted on three separate Raspberry Pi 5's running Raspberry Pi OS Li
 | Kubernetes Zigbee and MQTT broker | Achieved | Services are deployed and auto-configured to connect. Allows for better granular control of IoT devices than Home Assistant's Zigbee integration. |
 | Persistent cluster storage (local) | Achieved | I was originally using OpenEBS, though moved to Longhorn for better cross-node replication.  |
 | Secure WAN ingress (local) | Achieved | Allow non-local connections to access hosted services without exposing them to the public WAN. Tailscale is my current solution for this, allowing access to the Ingress-Nginx controller. |
-| Cluster-wide USB device availability | In-progress | Allow for single USB devices to be avaialble to pods, independent of which node the pod is on. Akri is my current solution for this. |
+| Cluster-wide USB device availability | In-progress | Allow for single USB devices to be accessed by pods, independent of which node the pod is on. Akri is my current solution for this. |
 
 ### Growth Goals
 | Goal | Status | Notes |
