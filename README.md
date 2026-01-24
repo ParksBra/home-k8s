@@ -26,7 +26,7 @@ This lab is hosted on three separate Raspberry Pi 5's running Raspberry Pi OS Li
 | Full CI/CD automation for changes and development | Achieved | Streamlined and reusable pipeline templates for deploying hosted services. Initially had built ontop of Jenkins, though switched to Azure DevOps for the wider feature set, allowing for cross-pipeline triggers. Azure DevOps requires local agents that can access the cluster nodes. |
 | Automated Kubernetes cluster creation | Achieved | Developed several Ansible roles to orchistrate creating and maintaining a Kubernetes Cluster. |
 | Automated node patching and upgrades | Achieved | To further harden security, all of my nodes are on a weekly patching interval, designed to minimize cluster impact. |
-| Disaster recovery implementation | In-progress | A full recovery process in the event of a worse-case failure. Services should be available and restored to their latest state proceeding process completion. |
+| Disaster recovery implementation | In-progress | A full recovery process in the event of a worst-case failure. Services should be available and restored to their latest state proceeding process completion. |
 | Scalable and modular development platform | Achieved | A platform that allows full separation, if desired, across different hosted services / solutions. |
 | Redundant backup methods | Achieved | Aside from application-made backups, I want to create snapshots of relevant persistent volumes and cluster state backups. This is achieved through Longhorn's snapshot feature and Velero's cluster backup solution. |
 | Rollback capability | In-progress | The ability to quickly rollback changes that have unintended impacts. This will be dependent on good Git practices and versioning. |
